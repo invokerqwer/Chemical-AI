@@ -2,7 +2,7 @@ import torch
 import sys
 import numpy as np
 from dataset_pro import QM9
-from method.ps_CFFN import PS_CFFN
+from method.CFFN import CFFN
 from method.run_qm9 import run_qm9
 from dig.threedgraph.evaluation import ThreeDEvaluator
 import torch_cluster
@@ -35,7 +35,7 @@ if type==1:
     dataset.data.pos[0]=0*dataset.data.pos[0]
     #dataset.data.pos[1]=0*dataset.data.pos[1
     print(dataset.data.pos)
-model =PS_CFFN(energy_and_force=True, cutoff=5.0, num_layers=4, 
+model =CFFN(energy_and_force=True, cutoff=5.0, num_layers=4, 
         hidden_channels=128, out_channels=1, int_emb_size=64, 
         basis_emb_size_dist=8, basis_emb_size_angle=8, basis_emb_size_torsion=8, out_emb_channels=256, 
         num_spherical=3, num_radial=6, envelope_exponent=5, 

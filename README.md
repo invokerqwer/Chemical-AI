@@ -1,4 +1,4 @@
-# PS-CFFN  
+# CFFN  
 ## Installation
 
 To use this code, PyTorch (>=1.6.0), PyTorch Geometric (>=1.6.0), and RDKit and OpenBabel are need to installed.
@@ -21,7 +21,8 @@ conda install -c openbabel openbabel
 
 ## Usage
 
-run   ```shell script
+run   
+```shell script
 python qm9.py
 ``` 
 to train and test QM9 dataset. All the .mol files in folder mol are the result of OpenBabel from .xyz files. You can get them by xyz.py

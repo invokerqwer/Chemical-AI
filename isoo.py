@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0,'..')
 sys.path.insert(0,'../..')
 from dataset_pro import isoo
-from method.ps_CFFN import PS_CFFN
+from method.CFFN import CFFN
 from method.run import run
 import torch_cluster
 from torch_geometric.data import DataLoader,Data
@@ -16,7 +16,7 @@ dataset=isoo(root='dataset/')
 print(dataset)
 split_idx= dataset.get_idx_split(len(dataset.data.y),train_size=1200, valid_size=150,test_size=150,seed=42)
 train_dataset, valid_dataset, test_dataset= dataset[split_idx['train']], dataset[split_idx['valid']], dataset[split_idx['test']]
-model =PS_CFFN(energy_and_force=True, cutoff=5.0, num_layers=4, 
+model =CFFN(energy_and_force=True, cutoff=5.0, num_layers=4, 
         hidden_channels=128, out_channels=1, int_emb_size=64, 
         basis_emb_size_dist=8, basis_emb_size_angle=8, basis_emb_size_torsion=8, out_emb_channels=256, 
         num_spherical=3, num_radial=6, envelope_exponent=5, 

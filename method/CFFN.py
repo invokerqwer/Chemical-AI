@@ -256,7 +256,7 @@ class update_u(torch.nn.Module):
         return u
 
 
-class PS_CFFN(torch.nn.Module):
+class CFFN(torch.nn.Module):
     r"""
          The spherical message passing neural network SphereNet from the `"Spherical Message Passing for 3D Graph Networks" <https://arxiv.org/abs/2102.05013>`_ paper.
         
@@ -288,7 +288,7 @@ class PS_CFFN(torch.nn.Module):
         num_spherical=7, num_radial=6, envelope_exponent=5,
         num_before_skip=1, num_after_skip=2, num_output_layers=3,
         act=swish, output_init='GlorotOrthogonal', use_node_features=True,use_1d=False):
-        super(PS_CFFN, self).__init__()
+        super(CFFN, self).__init__()
 
         self.cutoff = cutoff
         self.energy_and_force = energy_and_force

@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0,'..')
 sys.path.insert(0,'../..')
 from dataset_pro import MD17
-from method.ps_CFFN import PS_CFFN
+from method.CFFN import CFFN
 from method.run import run
 from dig.threedgraph.evaluation import ThreeDEvaluator
 import torch_cluster
@@ -36,7 +36,7 @@ if type==2:
     print(dataset_md17.data.pos[idxs*num_atom])
     dataset_md17.data.pos[idxs*num_atom]=0*dataset_md17.data.pos[idxs*num_atom]
     print(dataset_md17.data.pos[idxs*num_atom])
-model_md17 =PS_CFFN(energy_and_force=True, cutoff=5.0, num_layers=4, 
+model_md17 =CFFN(energy_and_force=True, cutoff=5.0, num_layers=4, 
         hidden_channels=128, out_channels=1, int_emb_size=64, 
         basis_emb_size_dist=8, basis_emb_size_angle=8, basis_emb_size_torsion=8, out_emb_channels=256, 
         num_spherical=3, num_radial=6, envelope_exponent=5, 
